@@ -51,8 +51,8 @@ function load(){
 	};
 
 	map = new OpenLayers.Map( 'map', options );
-	var googleStreets = new OpenLayers.Layer.Google("Google Streets" , {type: G_NORMAL_MAP, numZoomLevels:22, sphericalMercator:true});
-	var googleSatellite = new OpenLayers.Layer.Google("Google Satellite" , {type: G_SATELLITE_MAP, numZoomLevels:22, sphericalMercator:true});
+	var googleStreets = new OpenLayers.Layer.Google("Google Streets" , {numZoomLevels:22, sphericalMercator:true});
+	var googleSatellite = new OpenLayers.Layer.Google("Google Satellite" , {type: google.maps.MapTypeId.SATELLITE, numZoomLevels:22, sphericalMercator:true});
 	map.addLayers([googleStreets,googleSatellite]);
 
 	var geojson = new OpenLayers.Layer.GML("Timewalk", "javascripts/Time_Walk_pts.json", {
